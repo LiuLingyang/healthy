@@ -1,7 +1,10 @@
 <template>
     <div class="g-mn">
         
-        <div class="g-index">
+        <div class="g-index" v-show="mode==='index'">
+            <div class="m-hd">
+                国民体质评定报告
+            </div>
             <div class="m-national">
                 <p class="rank"><span>{{personalRank}}</span>名</p>
                 <p class="pro">全省排名</p>
@@ -30,33 +33,36 @@
                     </div>
                 </div>
             </div>
-
             <div class="m-national-list">
-                <div class="item f-cb">
+                <div class="item f-cb" @click="changeMode('body')">
                     <div class="img"><img src="../assets/img/body.png"></div>
                     <div class="wrd">体成分（{{BodyComposition.BodyFatRateScore}}）</div>
                     <div class="u-btn u-btn-1">{{BodyComposition.BodyFatRateAssess}}</div>
                     <div class="arrow"></div>
                 </div>
-                <div class="item f-cb">
+                <div class="item f-cb" @click="changeMode('bone')">
                     <div class="img"><img src="../assets/img/bone.png"></div>
                     <div class="wrd">骨密度（{{BoneDensity.TValue}}）</div>
                     <div class="u-btn u-btn-1">{{BoneDensity.FractureRisk}}</div>
                     <div class="arrow"></div>
                 </div>
-                <div class="item f-cb">
+                <div class="item f-cb" @click="changeMode('cardiopulmonary')">
                     <div class="img"><img src="../assets/img/cardiopulmonary.png"></div>
                     <div class="wrd">心肺功能（{{CardiopulmonaryAbility.FCValue}}）</div>
                     <div class="u-btn u-btn-1">{{CardiopulmonaryAbility.Assess}}</div>
                     <div class="arrow"></div>
                 </div>
-                <div class="item f-cb">
+                <div class="item f-cb" @click="changeMode('vascular')">
                     <div class="img"><img src="../assets/img/vascular.png"></div>
                     <div class="wrd">血管机能（{{VascularFunction.ABILeftScore}}~{{VascularFunction.ABIRightScore}}）</div>
                     <div class="u-btn u-btn-1">{{VascularFunction.ABILeftAssess}}</div>
                     <div class="arrow"></div>
                 </div>
             </div>
+        </div>
+
+        <div class="g-body" v-show="mode==='body'">
+            <BodyComposition :BodyComposition="BodyComposition" v-on:changeMode="changeMode"></BodyComposition>
         </div>
 
     </div>
@@ -67,6 +73,7 @@
     import _ from '../utils';
     import consts from '../utils/consts';
     import service from '../utils/service';
+    import BodyComposition from '../components/bodyComposition';
 
     const dataArr = ['personalRank','sex','brithday','height','weight','vitalCapacity','grip','sittingFlexion','selReactionTime','EyeCloseStandTime']
 
@@ -105,7 +112,11 @@
                     this.CardiopulmonaryAbility = result.CardiopulmonaryAbility[0];
                     this.VascularFunction = result.VascularFunction[0];
                 })
+            },
+            changeMode(mode){
+                this.mode = mode;
             }
-        }
+        },
+        components:{BodyComposition}
     }
 </script>

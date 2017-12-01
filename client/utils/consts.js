@@ -1,3 +1,40 @@
 export default {
-	
+	BODY_SHAPE:[
+    {
+        text:'隐形肥胖型',
+        index:1
+    },
+    {
+        text:'肥胖型',
+        index:2
+    },
+    {
+        text:'偏胖型',
+        index:3
+    },
+    {
+        text:'运动不足型',
+        index:4
+    },
+    {
+        text:'标准',
+        index:5
+    },
+    {
+        text:'标准肌肉型',
+        index:6
+    },
+    {
+        text:'偏瘦型',
+        index:7
+    },
+    {
+        text:'偏瘦肌肉型',
+        index:8
+    },
+    {
+        text:'肌肉发达型',
+        index:9
+    },
+    ]
 }

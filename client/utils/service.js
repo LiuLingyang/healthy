@@ -24,7 +24,7 @@ export default {
           "SelReactionTime":"5",
           "EyeCloseStandTime":"12.66",
           "VitalCapacity":"2260",
-          "Sex":"1",
+          "Sex":"0",
           "Brithday":"1988-08-08",
           "BodyComposition":[{
             "Device":"MC180",
