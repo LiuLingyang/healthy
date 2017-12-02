@@ -65,6 +65,18 @@
             <BodyComposition :BodyComposition="BodyComposition" v-on:changeMode="changeMode"></BodyComposition>
         </div>
 
+        <div class="g-bone" v-show="mode==='bone'">
+            <BoneDensity :BoneDensity="BoneDensity" v-on:changeMode="changeMode"></BoneDensity>
+        </div>
+
+        <div class="g-cardiopulmonary" v-show="mode==='cardiopulmonary'">
+            <CardiopulmonaryAbility :CardiopulmonaryAbility="CardiopulmonaryAbility" v-on:changeMode="changeMode"></CardiopulmonaryAbility>
+        </div>
+
+        <div class="g-vascular" v-show="mode==='vascular'">
+            <VascularFunction :VascularFunction="VascularFunction" v-on:changeMode="changeMode"></VascularFunction>
+        </div>
+
     </div>
 </template>
 
@@ -74,6 +86,9 @@
     import consts from '../utils/consts';
     import service from '../utils/service';
     import BodyComposition from '../components/bodyComposition';
+    import BoneDensity from '../components/boneDensity';
+    import CardiopulmonaryAbility from '../components/cardiopulmonaryAbility';
+    import VascularFunction from '../components/VascularFunction';
 
     const dataArr = ['personalRank','sex','brithday','height','weight','vitalCapacity','grip','sittingFlexion','selReactionTime','EyeCloseStandTime']
 
@@ -117,6 +132,6 @@
                 this.mode = mode;
             }
         },
-        components:{BodyComposition}
+        components:{BodyComposition,BoneDensity,CardiopulmonaryAbility,VascularFunction}
     }
 </script>

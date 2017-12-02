@@ -6,6 +6,12 @@
         </div>
         <div class="m-ship"><img src="../assets/img/ship.png"></div>
         <div class="m-mdl">
+            <div class="imgs">
+                <div class="line line-1"></div>
+                <img class="img1" src="../assets/img/body1.png"/>
+                <img class="img2" src="../assets/img/body2.png"/>
+                <img class="img3" src="../assets/img/body3.png"/>
+            </div>
             <div class="m-blk">
                 <div class="ttl">体脂肪率的值和得分</div>
                 <div class="box">
@@ -72,12 +78,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="imgs">
-                <div class="line line-1"></div>
-                <img class="img1" src="../assets/img/body1.png"/>
-                <img class="img2" src="../assets/img/body2.png"/>
-                <img class="img3" src="../assets/img/body3.png"/>
             </div>
         </div>
     </div>
