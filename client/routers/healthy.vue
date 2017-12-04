@@ -1,7 +1,7 @@
 <template>
     <div class="g-mn">
         
-        <div class="g-index" v-show="mode==='index'">
+        <div class="g-national" v-show="mode==='national'">
             <div class="m-hd">
                 国民体质评定报告
             </div>
@@ -31,6 +31,8 @@
                         <p>选择反应时：{{selReactionTime}}s</p>
                         <p>闭眼单脚站立：{{EyeCloseStandTime}}s</p>
                     </div>
+
+                    <!--div class="line line-1"></div-->
                 </div>
             </div>
             <div class="m-national-list">
@@ -57,6 +59,63 @@
                     <div class="wrd">血管机能（{{VascularFunction.ABILeftScore}}~{{VascularFunction.ABIRightScore}}）</div>
                     <div class="u-btn u-btn-1">{{VascularFunction.ABILeftAssess}}</div>
                     <div class="arrow"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="g-citizen" v-show="mode==='citizen'">
+            <div class="m-hd">
+                公民体质评定报告
+            </div>
+            <div class="m-citizen f-cb">
+                <div class="img">
+                    <img v-if="age>2&&age<7&&sex==0" src="../assets/img/3-6-0.png"/>
+                    <img v-if="age>2&&age<7&&sex==1" src="../assets/img/3-6-1.png"/>
+                    <img v-if="age>19&&age<40&&sex==0" src="../assets/img/20-39-0.png"/>
+                    <img v-if="age>19&&age<40&&sex==1" src="../assets/img/20-39-1.png"/>
+                    <img v-if="age>39&&age<60&&sex==0" src="../assets/img/40-59-0.png"/>
+                    <img v-if="age>39&&age<60&&sex==1" src="../assets/img/40-59-1.png"/>
+                    <img v-if="age>59&&age<70&&sex==0" src="../assets/img/60-69-0.png"/>
+                    <img v-if="age>59&&age<70&&sex==1" src="../assets/img/60-69-1.png"/>
+                </div>
+                <div class="rank">
+                    您的排名已经超过全省<br><span>60%</span><br>的人啦！
+                </div>
+            </div>
+            <div class="m-mdl m-mdl-1">
+                <div class="imgs">
+                    <div class="line line-4"></div>
+                    <img class="img1" src="../assets/img/citizen1.png"/>
+                    <img class="img6" src="../assets/img/citizen2.png"/>
+                    <img class="img7" src="../assets/img/citizen3.png"/>
+                </div>
+                <div class="m-blk m-blk-1">
+                    <div class="ttl">身体形态</div>
+                    <div class="box">
+                        <div class="tab">
+                            <div class="item f-cb"><span class="k">身高</span><span class="v">{{height}}cm</span></div>
+                            <div class="item f-cb"><span class="k">体重</span><span class="v">{{weight}}kg</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-blk m-blk-1">
+                    <div class="ttl">身体机能</div>
+                    <div class="box">
+                        <div class="tab">
+                            <div class="item f-cb"><span class="k">肺活量</span><span class="v">{{vitalCapacity}}ml</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-blk m-blk-1">
+                    <div class="ttl">身体素质</div>
+                    <div class="box">
+                        <div class="tab">
+                            <div class="item f-cb"><span class="k">握力</span><span class="v">{{grip}}kg</span></div>
+                            <div class="item f-cb"><span class="k">坐位体前屈</span><span class="v">{{sittingFlexion}}cm</span></div>
+                            <div class="item f-cb"><span class="k">选择反应时</span><span class="v">{{selReactionTime}}s</span></div>
+                            <div class="item f-cb"><span class="k">闭眼单脚站立</span><span class="v">{{EyeCloseStandTime}}s</span></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -95,7 +154,7 @@
     export default {
         data(){
             let obj = {
-                mode:'index',
+                mode:'national',
                 age:undefined,
                 BodyComposition:{},
                 BoneDensity:{},
