@@ -92,6 +92,7 @@
     }
     .box{
         margin-right:20px;
+        &-1{margin-right:10px;}
     }
     .line{
         position:relative;width:100%;margin-top:40px;
@@ -184,6 +185,57 @@
             color:#666;height:45px;line-height:45px;padding:0 5px;border-bottom:1px solid #f0f0f0;margin:1px 0;
             .k{float:left;}
             .v{float:right;margin-right:20px;}
+        }
+    }
+    .obst{
+        position:relative;margin:40px 0;font-size:14px;color:#666;height:70px;
+        .counts{
+            .count{
+                position:absolute;width:10%;margin-left:-10px;top:-20px;height:19px;
+                &-1{left:0;}
+                &-2{left:10%;}
+                &-3{left:20%;}
+                &-4{left:30%;}
+                &-5{left:40%;}
+                &-6{left:50%;}
+                &-7{left:60%;}
+                &-8{left:70%;}
+                &-9{left:80%;}
+                &-10{left:90%;}
+                &-11{left:100%;}
+            }
+            .num{position:absolute;top:-7px;}
+            .trig{position:absolute;left:4px;bottom:0;width: 0;height: 0;border-left: 5px solid transparent;border-right: 5px solid transparent;border-top: 7px solid #666;}
+        }
+        .btns{
+            border-radius:10px;overflow:hidden;
+            .u-btn{
+                float:left;border-right:1px dashed #fff;
+                &:last-child{border-right:0;}
+            }
+        }
+        .explains{
+            .explain{
+                float:left;border-right:1px dashed #89a1df;padding-top:4px;text-align:center;font-size:13px;
+                &-1{width:50%;border-left:1px dashed #89a1df;}
+                &-2{width:40%;}
+                &-3{width:10%;}
+            }
+        }
+        .calcs{
+            .calc{
+                position:absolute;width:35px;height:35px;top:50px;
+                &-1{left:0;}
+                &-2{left:20%;}
+                &-3{left:50%;margin-left:-35px;}
+                &-4{left:70%;margin-left:-17px;}
+                &-5{left:100%;margin-left:-34px;}
+            }
+        }
+        .feets{
+            .feet{
+                position:absolute;height:20px;top:0;margin-left:-7px;
+            }
         }
     }
 }

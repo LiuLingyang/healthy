@@ -28,7 +28,56 @@
             </div>
             <div class="m-blk">
                 <div class="ttl">血管阻塞程度（ABI）左踝和右踝</div>
-                <div class="box">
+                <div class="box box-1">
+                    <div class="obst">
+                        <div class="counts">
+                            <div class="count count-1">0.4</div>
+                            <div class="count count-2">0.5</div>
+                            <div class="count count-3">0.6</div>
+                            <div class="count count-4">0.7</div>
+                            <div class="count count-5">0.8</div>
+                            <div class="count count-6">
+                                <div class="num">0.9</div>
+                                <div class="trig"></div>
+                            </div>
+                            <div class="count count-7">1.0</div>
+                            <div class="count count-8">1.1</div>
+                            <div class="count count-9">1.2</div>
+                            <div class="count count-10">
+                                <div class="num">1.3</div>
+                                <div class="trig"></div>
+                            </div>
+                            <div class="count count-11">1.4</div>
+                        </div>
+                        <div class="btns">
+                            <div class="u-btn u-btn-5 u-btn-5-1"></div>
+                            <div class="u-btn u-btn-5 u-btn-5-1"></div>
+                            <div class="u-btn u-btn-5 u-btn-5-1"></div>
+                            <div class="u-btn u-btn-5 u-btn-5-1"></div>
+                            <div class="u-btn u-btn-5 u-btn-5-1"></div>
+                            <div class="u-btn u-btn-5 u-btn-5-2"></div>
+                            <div class="u-btn u-btn-5 u-btn-5-3"></div>
+                            <div class="u-btn u-btn-5 u-btn-5-3"></div>
+                            <div class="u-btn u-btn-5 u-btn-5-3"></div>
+                            <div class="u-btn u-btn-5 u-btn-5-1"></div>
+                        </div>
+                        <div class="explains">
+                            <div class="explain explain-1">闭塞</div>
+                            <div class="explain explain-2">正常</div>
+                            <div class="explain explain-3">钙化</div>
+                        </div>
+                        <div class="calcs">
+                            <img class="calc calc-1" src="../assets/img/calc1.png">
+                            <img class="calc calc-2" src="../assets/img/calc2.png">
+                            <img class="calc calc-3" src="../assets/img/calc3.png">
+                            <img class="calc calc-4" src="../assets/img/calc4.png">
+                            <img class="calc calc-5" src="../assets/img/calc5.png">
+                        </div>
+                        <div class="feets">
+                            <img class="feet" src="../assets/img/feet1.png" :style="{left:(VascularFunction.ABILeftScore*100-40)+'%'}">
+                            <img class="feet" src="../assets/img/feet2.png" :style="{left:(VascularFunction.ABIRightScore*100-40)+'%'}">
+                        </div>
+                    </div>
                     <div class="abi">
                         <div class="item f-cb">
                             <div class="left">左踝</div>
