@@ -8,7 +8,7 @@
             <div class="m-national">
                 <p class="rank"><span>{{personalRank}}</span>名</p>
                 <p class="pro">全省排名</p>
-                <div class="img">
+                <div class="img" @click="changeMode('summary')">
                     <img v-if="age>2&&age<7&&sex==0" src="../assets/img/3-6-0.png"/>
                     <img v-if="age>2&&age<7&&sex==1" src="../assets/img/3-6-1.png"/>
                     <img v-if="age>19&&age<40&&sex==0" src="../assets/img/20-39-0.png"/>
@@ -60,6 +60,11 @@
                     <div class="u-btn u-btn-1">{{VascularFunction.ABILeftAssess}}</div>
                     <div class="arrow"></div>
                 </div>
+                <div class="item f-cb" @click="changeMode('total')">
+                    <div class="img"><img src="../assets/img/total.png"></div>
+                    <div class="wrd">综合评价</div>
+                    <div class="arrow"></div>
+                </div>
             </div>
         </div>
 
@@ -79,7 +84,7 @@
                     <img v-if="age>59&&age<70&&sex==1" src="../assets/img/60-69-1.png"/>
                 </div>
                 <div class="rank">
-                    您的排名已经超过全省<br><span>60%</span><br>的人啦！
+                    您的排名已经超过全省<br><span>{{rankPercent}}%</span><br>的人啦！
                 </div>
             </div>
             <div class="m-mdl m-mdl-1">
@@ -136,6 +141,14 @@
             <VascularFunction :VascularFunction="VascularFunction" v-on:changeMode="changeMode"></VascularFunction>
         </div>
 
+        <div class="g-total" v-show="mode==='total'">
+            <TotalEvaluate :TotalEvaluate="TotalEvaluate" v-on:changeMode="changeMode"></TotalEvaluate>
+        </div>
+
+        <div class="g-summary" v-show="mode==='summary'">
+            <SummaryEvaluate :result="result" v-on:changeMode="changeMode"></SummaryEvaluate>
+        </div>
+
     </div>
 </template>
 
@@ -147,7 +160,9 @@
     import BodyComposition from '../components/bodyComposition';
     import BoneDensity from '../components/boneDensity';
     import CardiopulmonaryAbility from '../components/cardiopulmonaryAbility';
-    import VascularFunction from '../components/VascularFunction';
+    import VascularFunction from '../components/vascularFunction';
+    import TotalEvaluate from '../components/totalEvaluate';
+    import SummaryEvaluate from '../components/summary';
 
     const dataArr = ['personalRank','sex','brithday','height','weight','vitalCapacity','grip','sittingFlexion','selReactionTime','EyeCloseStandTime']
 
@@ -156,10 +171,13 @@
             let obj = {
                 mode:'national',
                 age:undefined,
+                rankPercent:undefined,
+                result:{},
                 BodyComposition:{},
                 BoneDensity:{},
                 CardiopulmonaryAbility:{},
-                VascularFunction:{}
+                VascularFunction:{},
+                TotalEvaluate:{}
             };
             dataArr.forEach(item => {
                 obj[item] = undefined;
@@ -177,20 +195,23 @@
                 service.getQuery({
                     phoneorcard:18768177580
                 }).then(result => {
+                    this.result = result;
                     dataArr.forEach(item => {
                         this[item] = result[_.upperFirstLetter(item)];
                     })
                     this.age = _.ages(result.Brithday);
+                    this.rankPercent = Math.floor(result.PersonalRank/result.ProvinceTotalNum*100);
                     this.BodyComposition = result.BodyComposition[0];
                     this.BoneDensity = result.BoneDensity[0];
                     this.CardiopulmonaryAbility = result.CardiopulmonaryAbility[0];
                     this.VascularFunction = result.VascularFunction[0];
+                    this.TotalEvaluate = result.TotalEvaluate[0];
                 })
             },
             changeMode(mode){
                 this.mode = mode;
             }
         },
-        components:{BodyComposition,BoneDensity,CardiopulmonaryAbility,VascularFunction}
+        components:{BodyComposition,BoneDensity,CardiopulmonaryAbility,VascularFunction,TotalEvaluate,SummaryEvaluate}
     }
 </script>

@@ -18,7 +18,7 @@ export default {
           "Height":"176",
           "Weight":"65",
           "PersonalRank":"14600",
-          "ProvinceTotalNum":"550000",
+          "ProvinceTotalNum":"55000",
           "Grip":"55.8",
           "SittingFlexion":"16.8",
           "SelReactionTime":"5",
@@ -26,6 +26,13 @@ export default {
           "VitalCapacity":"2260",
           "Sex":"0",
           "Brithday":"1988-08-08",
+          "GripAssess":'良好',
+          "SittingFlexionAssess":'差',
+          "SelReactionTimeAssess":'良好',
+          "EyeCloseStandTimeAssess":'优秀',
+          "VitalCapacityAssess":'中等',
+          "TotalScore":'86',
+          "TotalAssess":'良好',
           "BodyComposition":[{
             "Device":"MC180",
             "BodyFatRateScore":"21.5",
@@ -34,7 +41,13 @@ export default {
             "TargetWeight":"68.5",
             "WeightControl":"-7.5",
             "FatControl":"-8.3",
-            "MuscleControl":"10"
+            "MuscleControl":"10",
+            "BMI":"10",
+            "BMIAssess":"良好",
+            "GutFat":"10",
+            "GutFatAssess":"良好",
+            "Whr":"10",
+            "WhrAssess":"良好",
           }],
           "BoneDensity":[{
             "Device":"EXA3000",
@@ -57,6 +70,10 @@ export default {
             "ABILeftAssess":"正常",
             "ABIRightScore":"1.3",
             "ABIRightAssess":"正常"
+          }],
+          "TotalEvaluate":[{
+            "TotalAppraise":"综合评价综合评价综合评价综合评价综合评价综合评价",
+            "ImportFocus":"重点关注重点关注重点关注重点关注重点关注重点关注",
           }]
         });
 			});
