@@ -90,6 +90,10 @@
                     </div>
                 </div>
             </div>
+            <div class="refImgs">
+                <img src="../assets/img/PWV1.jpg">
+                <img src="../assets/img/PWV2.jpg">
+            </div>
         </div>
     </div>
 </template>

@@ -22,16 +22,19 @@
                 <div class="box">
                     <div class="fract f-cb">
                         <div class="item" :class="{'z-active':BoneDensity.FractureRisk=='骨质正常'}">
+                            <div class="ref">T值≥-1</div>
                             <div class="img"><img src="../assets/img/fract1.png"></div>
                             <div class="wrd">骨质正常</div>
                             <div class="trig"><div class="hook"></div></div>
                         </div>
                         <div class="item" :class="{'z-active':BoneDensity.FractureRisk=='骨质少孔'}">
+                            <div class="ref">-2.5<T值<-1</div>
                             <div class="img"><img src="../assets/img/fract2.png"></div>
                             <div class="wrd">骨质少孔</div>
                             <div class="trig"><div class="hook"></div></div>
                         </div>
                         <div class="item" :class="{'z-active':BoneDensity.FractureRisk=='骨质疏松'}">
+                            <div class="ref">T值≤-2.5</div>
                             <div class="img"><img src="../assets/img/fract3.png"></div>
                             <div class="wrd">骨质疏松</div>
                             <div class="trig"><div class="hook"></div></div>

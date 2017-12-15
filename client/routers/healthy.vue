@@ -32,6 +32,7 @@
                         <p>闭眼单脚站立：{{EyeCloseStandTime}}s</p>
                     </div>
 
+                    <div class="tip">点击图片查看评价</div>
                     <!--div class="line line-1"></div-->
                 </div>
             </div>

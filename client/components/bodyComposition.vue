@@ -13,7 +13,7 @@
                 <img class="img3" src="../assets/img/body3.png"/>
             </div>
             <div class="m-blk">
-                <div class="ttl">体脂肪率的值和得分</div>
+                <div class="ttl">体脂肪率的值和评价</div>
                 <div class="box">
                     <div class="line f-cb">
                         <div class="u-btn u-btn-2 u-btn-2-1">过低</div>

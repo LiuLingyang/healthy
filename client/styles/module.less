@@ -36,6 +36,7 @@
             width:40px;top:136px;left:128px;transform:rotateZ(45deg);
         }
     }
+    .tip{font-size:12px;}
 }
 
 .m-national-list{
@@ -79,6 +80,9 @@
     }
     &-1{margin:0;border-radius:0;}
     &-2{padding-left:20px;}
+    .refImgs{
+        img{width:100%;margin-bottom:10px;}
+    }
 }
 
 .m-blk{
@@ -147,13 +151,14 @@
         .item{
             position:relative;float:left;width:33.3%;color:#999;
             &:nth-child(3n+0){margin-right:0;}
+            .ref{color:#999;}
             .img{
                 width:54px;height:54px;border:2px solid #fff;
                 img{width:50px;height:50px;}
             }
             .wrd{font-size:13px;margin-top:10px;}
             .trig{
-                display:none;position:absolute;top:32px;left:32px;width: 0;height: 0;border-bottom: 20px solid #86a3df;border-left: 20px solid transparent;
+                display:none;position:absolute;top:53px;left:32px;width: 0;height: 0;border-bottom: 20px solid #86a3df;border-left: 20px solid transparent;
                 .hook{
                     position:absolute;top:15px;left:-11px;width:5px;height:2px; background:#fff;line-height: 0;font-size:0;vertical-align: middle;-webkit-transform: rotate(45deg);
                     &::after{content:'/';display:block;width: 10px;height:2px; background:#fff;-webkit-transform: rotate(-90deg) translateY(-50%) translateX(50%);}

@@ -6,7 +6,7 @@
         		<p class="wrd">国民体质评定报告</p>
         	</div>
         	<div class="m-form">
-        		<div class="ipt"><input type="number" placeholder="请输入身份证号" v-model="phoneorcard"></div>
+        		<div class="ipt"><input type="text" placeholder="请输入身份证号" v-model="phoneorcard"></div>
         		<div class="ipt"><div class="u-btn u-btn-4" @click="submit">登录</div></div>
         	</div>
         </div>

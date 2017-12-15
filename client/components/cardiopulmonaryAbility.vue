@@ -25,6 +25,10 @@
                     </div>  
                 </div>
             </div>
+            <div class="refImgs">
+                <img src="../assets/img/FC1.jpg">
+                <img src="../assets/img/FC2.jpg">
+            </div>
         </div>
     </div>
 </template>
