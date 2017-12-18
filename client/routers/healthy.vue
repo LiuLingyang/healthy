@@ -135,11 +135,11 @@
         </div>
 
         <div class="g-cardiopulmonary" v-show="mode==='cardiopulmonary'">
-            <CardiopulmonaryAbility :CardiopulmonaryAbility="CardiopulmonaryAbility" v-on:changeMode="changeMode"></CardiopulmonaryAbility>
+            <CardiopulmonaryAbility :CardiopulmonaryAbility="CardiopulmonaryAbility" :result="result" v-on:changeMode="changeMode"></CardiopulmonaryAbility>
         </div>
 
         <div class="g-vascular" v-show="mode==='vascular'">
-            <VascularFunction :VascularFunction="VascularFunction" v-on:changeMode="changeMode"></VascularFunction>
+            <VascularFunction :VascularFunction="VascularFunction" :result="result" v-on:changeMode="changeMode"></VascularFunction>
         </div>
 
         <div class="g-total" v-show="mode==='total'">

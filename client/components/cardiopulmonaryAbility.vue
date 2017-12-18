@@ -26,8 +26,8 @@
                 </div>
             </div>
             <div class="refImgs">
-                <img src="../assets/img/FC1.jpg">
-                <img src="../assets/img/FC2.jpg">
+                <img v-if="result.Sex==0" src="../assets/img/FC1.jpg">
+                <img v-if="result.Sex==1" src="../assets/img/FC2.jpg">
             </div>
         </div>
     </div>
@@ -46,6 +46,9 @@
         },
         props: {
             CardiopulmonaryAbility: {
+                type: Object
+            },
+            result: {
                 type: Object
             }
         },
