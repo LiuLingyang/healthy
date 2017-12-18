@@ -24,6 +24,10 @@
                             <div class="right">属于：{{VascularFunction.PWVRightAssess}}水平</div>
                         </div>
                     </div>
+                    <div class="refImgs">
+                        <img v-if="result.Sex==0" src="../assets/img/PWV1.jpg">
+                        <img v-if="result.Sex==1" src="../assets/img/PWV2.jpg">
+                    </div>
                 </div>
             </div>
             <div class="m-blk">
@@ -89,10 +93,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="refImgs">
-                <img v-if="result.Sex==0" src="../assets/img/PWV1.jpg">
-                <img v-if="result.Sex==1" src="../assets/img/PWV2.jpg">
             </div>
         </div>
     </div>

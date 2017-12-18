@@ -6,7 +6,7 @@
                 国民体质评定报告
             </div>
             <div class="m-national">
-                <p class="rank"><span>{{personalRank}}</span>名</p>
+                <p class="rank"><span>{{rankPercent}}%</span></p>
                 <p class="pro">全省排名</p>
                 <div class="img" @click="changeMode('summary')">
                     <img v-if="age>2&&age<7&&sex==0" src="../assets/img/3-6-0.png"/>
