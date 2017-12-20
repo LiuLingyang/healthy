@@ -1,7 +1,7 @@
 import fetch from './fetch';
 
 const hostIp = 'http://124.207.124.238:8211/';
-const mock = true;
+const mock = false;
 
 export default {
 

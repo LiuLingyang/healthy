@@ -10,6 +10,7 @@
         		<div class="ipt"><div class="u-btn u-btn-4" @click="submit">登录</div></div>
         	</div>
         </div>
+        <div class="g-ft">浙江省国民体质监测中心</div>
     </div>
 </template>
 

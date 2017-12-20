@@ -194,7 +194,7 @@
         methods: {
             fetchQuery(){
                 service.getQuery({
-                    phoneorcard:18768177580
+                    phoneorcard:localStorage.phoneorcard
                 }).then(result => {
                     this.result = result;
                     dataArr.forEach(item => {

@@ -28,7 +28,7 @@
                             <div class="trig"><div class="hook"></div></div>
                         </div>
                         <div class="item" :class="{'z-active':BoneDensity.FractureRisk=='骨质少孔'}">
-                            <div class="ref">-2.5<T值<-1</div>
+                            <div class="ref">-2.5&lt;T值&lt;-1</div>
                             <div class="img"><img src="../assets/img/fract2.png"></div>
                             <div class="wrd">骨质少孔</div>
                             <div class="trig"><div class="hook"></div></div>
