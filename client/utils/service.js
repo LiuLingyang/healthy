@@ -1,6 +1,5 @@
 import fetch from './fetch';
 
-const hostIp = 'http://124.207.124.238:8211/';
 const mock = false;
 
 export default {
@@ -9,7 +8,7 @@ export default {
 		if(mock){
 			return new Promise((resolve, reject) => {
 				resolve({
-          "IsOk":"true",
+          "IsOK":"true",
           "Msg":"Ok",
           "UserName":"张三",
           "IDCard":"430682198812203665",
@@ -79,7 +78,7 @@ export default {
 			});
 		}
 
-		return fetch(hostIp + 'Test/GetReportData',{
+		return fetch('http://venues.zjtzjs.cn/ZJReport/GetReportData',{
       method:'GET',
       data:data
     });

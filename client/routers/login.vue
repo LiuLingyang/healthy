@@ -39,7 +39,7 @@
             	service.getQuery({
                     phoneorcard:this.phoneorcard
                 }).then(result => {
-                    if(result.IsOk == 'true'){
+                    if(result.IsOK == 'true'){
                     	localStorage.phoneorcard = this.phoneorcard;
                     	this.$router.push({ name: 'healthy'});
                     }else{

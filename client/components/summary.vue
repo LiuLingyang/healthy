@@ -9,31 +9,31 @@
             <div class="m-blk m-blk-2">
                 <div class="box">
                     <div class="summary">
-                        <div class="item">
+                        <div class="item" v-if="!!result.GripAssess">
                             <span>握力</span>
                             <div class="eval">{{result.GripAssess}}</div>
                         </div>
-                        <div class="item">
+                        <div class="item" v-if="!!result.SittingFlexionAssess">
                             <span>坐位体前屈</span>
                             <div class="eval">{{result.SittingFlexionAssess}}</div>
                         </div>
-                        <div class="item">
+                        <div class="item" v-if="!!result.SelReactionTimeAssess">
                             <span>选择反应时</span>
                             <div class="eval">{{result.SelReactionTimeAssess}}</div>
                         </div>
-                        <div class="item">
+                        <div class="item" v-if="!!result.EyeCloseStandTimeAssess">
                             <span>闭眼单脚站立</span>
                             <div class="eval">{{result.EyeCloseStandTimeAssess}}</div>
                         </div>
-                        <div class="item">
+                        <div class="item" v-if="!!result.VitalCapacityAssess">
                             <span>肺活量</span>
                             <div class="eval">{{result.VitalCapacityAssess}}</div>
                         </div>
-                        <div class="item">
+                        <div class="item" v-if="!!result.TotalScore">
                             <span>总得分</span>
                             <div class="eval">{{result.TotalScore}}</div>
                         </div>
-                        <div class="item">
+                        <div class="item" v-if="!!result.TotalAssess">
                             <span>总评价</span>
                             <div class="eval">{{result.TotalAssess}}</div>
                         </div>

@@ -6,8 +6,8 @@
                 国民体质评定报告
             </div>
             <div class="m-national">
-                <p class="rank"><span>{{rankPercent}}%</span></p>
-                <p class="pro">全省排名</p>
+                <p class="rank" v-if="rankPercent"><span>{{rankPercent}}%</span></p>
+                <p class="pro" v-if="rankPercent">全省排名</p>
                 <div class="img" @click="changeMode('summary')">
                     <img v-if="age>2&&age<7&&sex==0" src="../assets/img/3-6-0.png"/>
                     <img v-if="age>2&&age<7&&sex==1" src="../assets/img/3-6-1.png"/>
@@ -19,17 +19,17 @@
                     <img v-if="age>59&&age<70&&sex==1" src="../assets/img/60-69-1.png"/>
 
                     <div class="blk blk-1">
-                        <p>身高：{{height}}cm</p>
-                        <p>体重：{{weight}}kg</p>
+                        <p v-if="!!height">身高：{{height}}cm</p>
+                        <p v-if="!!weight">体重：{{weight}}kg</p>
                     </div>
                     <div class="blk blk-2">
-                        <p>肺活量：{{vitalCapacity}}ml</p>
+                        <p v-if="!!vitalCapacity">肺活量：{{vitalCapacity}}ml</p>
                     </div>
                     <div class="blk blk-3">
-                        <p>握力：{{grip}}kg</p>
-                        <p>坐位体前屈：{{sittingFlexion}}cm</p>
-                        <p>选择反应时：{{selReactionTime}}s</p>
-                        <p>闭眼单脚站立：{{EyeCloseStandTime}}s</p>
+                        <p v-if="!!grip">握力：{{grip}}kg</p>
+                        <p v-if="!!sittingFlexion">坐位体前屈：{{sittingFlexion}}cm</p>
+                        <p v-if="!!selReactionTime">选择反应时：{{selReactionTime}}s</p>
+                        <p v-if="!!EyeCloseStandTime">闭眼单脚站立：{{EyeCloseStandTime}}s</p>
                     </div>
 
                     <div class="tip">点击图片查看评价</div>
@@ -37,25 +37,25 @@
                 </div>
             </div>
             <div class="m-national-list">
-                <div class="item f-cb" @click="changeMode('body')">
+                <div class="item f-cb" v-if="!!BodyComposition" @click="changeMode('body')">
                     <div class="img"><img src="../assets/img/body.png"></div>
                     <div class="wrd">体成分（{{BodyComposition.BodyFatRateScore}}）</div>
                     <div class="u-btn u-btn-1">{{BodyComposition.BodyFatRateAssess}}</div>
                     <div class="arrow"></div>
                 </div>
-                <div class="item f-cb" @click="changeMode('bone')">
+                <div class="item f-cb" v-if="!!BoneDensity" @click="changeMode('bone')">
                     <div class="img"><img src="../assets/img/bone.png"></div>
                     <div class="wrd">骨密度（{{BoneDensity.TValue}}）</div>
                     <div class="u-btn u-btn-1">{{BoneDensity.FractureRisk}}</div>
                     <div class="arrow"></div>
                 </div>
-                <div class="item f-cb" @click="changeMode('cardiopulmonary')">
+                <div class="item f-cb" v-if="!!CardiopulmonaryAbility" @click="changeMode('cardiopulmonary')">
                     <div class="img"><img src="../assets/img/cardiopulmonary.png"></div>
                     <div class="wrd">心肺功能（{{CardiopulmonaryAbility.FCValue}}）</div>
                     <div class="u-btn u-btn-1">{{CardiopulmonaryAbility.Assess}}</div>
                     <div class="arrow"></div>
                 </div>
-                <div class="item f-cb" @click="changeMode('vascular')">
+                <div class="item f-cb" v-if="!!VascularFunction" @click="changeMode('vascular')">
                     <div class="img"><img src="../assets/img/vascular.png"></div>
                     <div class="wrd">血管机能（{{VascularFunction.ABILeftScore}}~{{VascularFunction.ABIRightScore}}）</div>
                     <div class="u-btn u-btn-1">{{VascularFunction.ABILeftAssess}}</div>
@@ -126,23 +126,23 @@
             </div>
         </div>
 
-        <div class="g-body" v-show="mode==='body'">
+        <div class="g-body" v-if="!!BodyComposition" v-show="mode==='body'">
             <BodyComposition :BodyComposition="BodyComposition" v-on:changeMode="changeMode"></BodyComposition>
         </div>
 
-        <div class="g-bone" v-show="mode==='bone'">
+        <div class="g-bone" v-if="!!BoneDensity" v-show="mode==='bone'">
             <BoneDensity :BoneDensity="BoneDensity" v-on:changeMode="changeMode"></BoneDensity>
         </div>
 
-        <div class="g-cardiopulmonary" v-show="mode==='cardiopulmonary'">
+        <div class="g-cardiopulmonary" v-if="!!CardiopulmonaryAbility" v-show="mode==='cardiopulmonary'">
             <CardiopulmonaryAbility :CardiopulmonaryAbility="CardiopulmonaryAbility" :result="result" v-on:changeMode="changeMode"></CardiopulmonaryAbility>
         </div>
 
-        <div class="g-vascular" v-show="mode==='vascular'">
+        <div class="g-vascular" v-if="!!VascularFunction" v-show="mode==='vascular'">
             <VascularFunction :VascularFunction="VascularFunction" :result="result" v-on:changeMode="changeMode"></VascularFunction>
         </div>
 
-        <div class="g-total" v-show="mode==='total'">
+        <div class="g-total" v-if="!!TotalEvaluate" v-show="mode==='total'">
             <TotalEvaluate :TotalEvaluate="TotalEvaluate" v-on:changeMode="changeMode"></TotalEvaluate>
         </div>
 
@@ -201,7 +201,7 @@
                         this[item] = result[_.upperFirstLetter(item)];
                     })
                     this.age = _.ages(result.Brithday);
-                    this.rankPercent = Math.floor(result.PersonalRank/result.ProvinceTotalNum*100);
+                    this.rankPercent = result.PersonalRank && Math.floor(result.PersonalRank/result.ProvinceTotalNum*100);
                     this.BodyComposition = result.BodyComposition[0];
                     this.BoneDensity = result.BoneDensity[0];
                     this.CardiopulmonaryAbility = result.CardiopulmonaryAbility[0];
