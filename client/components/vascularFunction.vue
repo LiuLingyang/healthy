@@ -10,6 +10,7 @@
                 <div class="line line-3"></div>
                 <img class="img1" src="../assets/img/vascular1.png"/>
                 <img class="img5" src="../assets/img/vascular2.png"/>
+                <img class="img8" src="../assets/img/vascular1.png"/>
             </div>
             <div class="m-blk">
                 <div class="ttl">血管弹性程度（PWV）左踝和右踝</div>
@@ -90,6 +91,29 @@
                         <div class="item f-cb">
                             <div class="left">右踝</div>
                             <div class="right">属于：{{VascularFunction.ABIRightAssess}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="m-blk">
+                <div class="ttl">血管舒张程度</div>
+                <div class="box">
+                    <div class="pwv">
+                        <div class="item f-cb">
+                            <div class="left">左臂收缩压</div>
+                            <div class="right">{{VascularFunction.FLb_SBP}}</div>
+                        </div>
+                        <div class="item f-cb">
+                            <div class="left">左臂舒张压</div>
+                            <div class="right">{{VascularFunction.FLb_DBP}}</div>
+                        </div>
+                        <div class="item f-cb">
+                            <div class="left">右臂收缩压</div>
+                            <div class="right">{{VascularFunction.FRb_SBP}}</div>
+                        </div>
+                        <div class="item f-cb">
+                            <div class="left">右臂舒张压</div>
+                            <div class="right">{{VascularFunction.FRb_DBP}}</div>
                         </div>
                     </div>
                 </div>
