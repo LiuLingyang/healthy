@@ -203,13 +203,12 @@
                 service.getQuery({
                     phoneorcard:localStorage.phoneorcard
                 }).then(result => {
-                    console.log(result)
                     this.result = result;
                     dataArr.forEach(item => {
                         this[item] = result[_.upperFirstLetter(item)];
                     })
                     this.age = _.ages(result.Brithday);
-                    this.rankPercent = result.PersonalRank && Math.floor(result.PersonalRank/result.ProvinceTotalNum*100);
+                    this.rankPercent = result.PersonalRank && Math.floor((1-result.PersonalRank/result.ProvinceTotalNum)*100);
                     this.BodyComposition = result.BodyComposition[0];
                     this.BoneDensity = result.BoneDensity[0];
                     this.CardiopulmonaryAbility = result.CardiopulmonaryAbility[0];
