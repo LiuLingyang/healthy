@@ -96,7 +96,7 @@
                 </div>
             </div>
             <div class="m-blk">
-                <div class="ttl">血管舒张程度</div>
+                <div class="ttl">血压</div>
                 <div class="box">
                     <div class="pwv">
                         <div class="item f-cb">

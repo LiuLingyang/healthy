@@ -8,7 +8,6 @@
             <div class="m-national">
                 <p class="rank" v-if="rankPercent">您超过本省{{rankPercent}}%的人</p>
                 <div class="img" @click="changeMode('summary')">
-                    <div class="tip">点击图片查看评价</div>
                     <img v-if="age>2&&age<7&&sex==0" src="../assets/img/3-6-0.png"/>
                     <img v-if="age>2&&age<7&&sex==1" src="../assets/img/3-6-1.png"/>
                     <img v-if="age>19&&age<40&&sex==0" src="../assets/img/20-39-0.png"/>
@@ -25,12 +24,12 @@
                     <div class="blk blk-2">
                         <p v-if="!!vitalCapacity">肺活量：{{vitalCapacity}}ml</p>
                         <p v-if="!!result.StepIndex">台阶指数：{{result.StepIndex}}</p>
-                        <p v-if="!!result.LongJump">立定跳远：{{result.LongJump}}m</p>
+                        <p v-if="!!result.LongJump">立定跳远：{{result.LongJump}}cm</p>
                         <p v-if="!!result.Tennis">网球掷远：{{result.Tennis}}m</p>
                         <p v-if="!!result.TripRun">10米折返跑：{{result.TripRun}}s</p>
-                        <p v-if="!!result.Balance">走平衡木：{{result.Balance}}</p>
-                        <p v-if="!!result.ContinueJump">双脚连续跳：{{result.ContinueJump}}</p>
-                        <p v-if="!!result.StandJump">纵跳：{{result.StandJump}}</p>
+                        <p v-if="!!result.Balance">走平衡木：{{result.Balance}}s</p>
+                        <p v-if="!!result.ContinueJump">双脚连续跳：{{result.ContinueJump}}s</p>
+                        <p v-if="!!result.StandJump">纵跳：{{result.StandJump}}cm</p>
                         <p v-if="!!result.PushUp">俯卧撑：{{result.PushUp}}</p>
                         <p v-if="!!result.SitUp">一分钟仰卧起坐：{{result.SitUp}}</p>
                     </div>
@@ -42,6 +41,7 @@
                     </div>
                     <!--div class="line line-1"></div-->
                 </div>
+                <div class="tip">点击图片查看评价</div>
             </div>
             <div class="m-national-list">
                 <div class="item f-cb" v-if="!!BodyComposition" @click="changeMode('body')">

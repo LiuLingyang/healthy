@@ -9,21 +9,9 @@
             <div class="m-blk m-blk-2">
                 <div class="box">
                     <div class="summary">
-                        <div class="item" v-if="!!result.GripAssess">
-                            <span>握力</span>
-                            <div class="eval">{{result.GripAssess}}</div>
-                        </div>
-                        <div class="item" v-if="!!result.SittingFlexionAssess">
-                            <span>坐位体前屈</span>
-                            <div class="eval">{{result.SittingFlexionAssess}}</div>
-                        </div>
-                        <div class="item" v-if="!!result.SelReactionTimeAssess">
-                            <span>选择反应时</span>
-                            <div class="eval">{{result.SelReactionTimeAssess}}</div>
-                        </div>
-                        <div class="item" v-if="!!result.EyeCloseStandTimeAssess">
-                            <span>闭眼单脚站立</span>
-                            <div class="eval">{{result.EyeCloseStandTimeAssess}}</div>
+                        <div class="item" v-if="!!result.HWAssess">
+                            <span>标准身高体重</span>
+                            <div class="eval">{{result.HWAssess}}</div>
                         </div>
                         <div class="item" v-if="!!result.VitalCapacityAssess">
                             <span>肺活量</span>
@@ -32,6 +20,34 @@
                         <div class="item" v-if="!!result.StepIndexAssess">
                             <span>台阶指数</span>
                             <div class="eval">{{result.StepIndexAssess}}</div>
+                        </div>
+                        <div class="item" v-if="!!result.GripAssess">
+                            <span>握力</span>
+                            <div class="eval">{{result.GripAssess}}</div>
+                        </div>
+                        <div class="item" v-if="!!result.StandJumpAssess">
+                            <span>纵跳</span>
+                            <div class="eval">{{result.StandJumpAssess}}</div>
+                        </div>
+                        <div class="item" v-if="!!result.SittingFlexionAssess">
+                            <span>坐位体前屈</span>
+                            <div class="eval">{{result.SittingFlexionAssess}}</div>
+                        </div>
+                        <div class="item" v-if="!!result.EyeCloseStandTimeAssess">
+                            <span>闭眼单脚站立</span>
+                            <div class="eval">{{result.EyeCloseStandTimeAssess}}</div>
+                        </div>
+                        <div class="item" v-if="!!result.SelReactionTimeAssess">
+                            <span>选择反应时</span>
+                            <div class="eval">{{result.SelReactionTimeAssess}}</div>
+                        </div>
+                        <div class="item" v-if="!!result.PushUpAssess">
+                            <span>俯卧撑</span>
+                            <div class="eval">{{result.PushUpAssess}}</div>
+                        </div>
+                        <div class="item" v-if="!!result.SitUpAssess">
+                            <span>一分钟仰卧起坐</span>
+                            <div class="eval">{{result.SitUpAssess}}</div>
                         </div>
                         <div class="item" v-if="!!result.LongJumpAssess">
                             <span>立定跳远</span>
@@ -52,22 +68,6 @@
                         <div class="item" v-if="!!result.ContinueJumpAssess">
                             <span>双脚连续跳</span>
                             <div class="eval">{{result.ContinueJumpAssess}}</div>
-                        </div>
-                        <div class="item" v-if="!!result.StandJumpAssess">
-                            <span>纵跳</span>
-                            <div class="eval">{{result.StandJumpAssess}}</div>
-                        </div>
-                        <div class="item" v-if="!!result.PushUpAssess">
-                            <span>俯卧撑</span>
-                            <div class="eval">{{result.PushUpAssess}}</div>
-                        </div>
-                        <div class="item" v-if="!!result.SitUpAssess">
-                            <span>一分钟仰卧起坐</span>
-                            <div class="eval">{{result.SitUpAssess}}</div>
-                        </div>
-                        <div class="item" v-if="!!result.HWAssess">
-                            <span>标准身高体重</span>
-                            <div class="eval">{{result.HWAssess}}</div>
                         </div>
                         <div class="item" v-if="!!result.BodyHeightAssess">
                             <span>儿童身高</span>

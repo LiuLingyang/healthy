@@ -3,6 +3,7 @@
         <div class="g-login">
         	<div class="m-banner">
         		<div class="img"><img src="../assets/img/login.png"></div>
+                <p class="wrd1">浙江省国民体质监测中心</p>
         		<p class="wrd">国民体质评定报告</p>
         	</div>
         	<div class="m-form">
@@ -10,7 +11,6 @@
         		<div class="ipt"><div class="u-btn u-btn-4" @click="submit">登录</div></div>
         	</div>
         </div>
-        <div class="g-ft">浙江省国民体质监测中心</div>
     </div>
 </template>
 
