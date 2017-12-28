@@ -46,7 +46,7 @@
                     	localStorage.removeItem('phoneorcard');
                     }
                 }).catch(err => {
-                    alert('查询信息出错！');
+                    alert('没有查询到您的报告');
                 });
             }
         }
