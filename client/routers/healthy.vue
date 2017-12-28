@@ -214,7 +214,9 @@
                     this.CardiopulmonaryAbility = result.CardiopulmonaryAbility[0];
                     this.VascularFunction = result.VascularFunction[0];
                     this.TotalEvaluate = result.TotalEvaluate[0];
-                })
+                }).catch(err => {
+                    alert('查询信息出错！');
+                });
             },
             changeMode(mode){
                 this.mode = mode;
