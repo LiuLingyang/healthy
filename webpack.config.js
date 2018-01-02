@@ -4,7 +4,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry:{
-    index:"./client/main"
+    index:["babel-polyfill", "./client/main"]
   },
   output: {
     path: __dirname + '/public',

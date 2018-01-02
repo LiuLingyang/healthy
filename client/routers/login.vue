@@ -26,8 +26,8 @@
             }
         },
         created(){
-            if(!!localStorage.phoneorcard){
-            	this.$router.push({ name: 'healthy'});
+            if(localStorage && !!localStorage.phoneorcard){
+                this.routerGo(localStorage.phoneorcard);
             }
         },
         mounted(){
@@ -40,14 +40,21 @@
                     phoneorcard:this.phoneorcard
                 }).then(result => {
                     if(result.IsOK == 'true'){
-                    	localStorage.phoneorcard = this.phoneorcard;
-                    	this.$router.push({ name: 'healthy'});
+                    	if(localStorage){
+                            localStorage.phoneorcard = this.phoneorcard;
+                        }
+                        this.routerGo(this.phoneorcard);
                     }else{
-                    	localStorage.removeItem('phoneorcard');
+                        if(localStorage){
+                            localStorage.removeItem('phoneorcard');
+                        }
                     }
                 }).catch(err => {
                     alert('没有查询到您的报告');
                 });
+            },
+            routerGo(phoneorcard){
+                this.$router.push({ name: 'healthy', params: { phoneorcard }}) 
             }
         }
     }

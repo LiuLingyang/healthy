@@ -196,12 +196,12 @@
             this.fetchQuery();
         },
         mounted(){
-
+            
         },
         methods: {
             fetchQuery(){
                 service.getQuery({
-                    phoneorcard:localStorage.phoneorcard
+                    phoneorcard:this.$route.params.phoneorcard
                 }).then(result => {
                     this.result = result;
                     dataArr.forEach(item => {
