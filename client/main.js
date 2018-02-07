@@ -17,6 +17,11 @@ const router = new VueRouter({
             component: require('./routers/login.vue')
         },
         {
+            path: '/login2',
+            name:'login2',
+            component: require('./routers/login2.vue')
+        },
+        {
             path: '/healthy',
             name:'healthy',
             component: require('./routers/healthy.vue')

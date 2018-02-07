@@ -100,7 +100,11 @@ export default {
 			});
 		}
 
-		return fetch('http://venues.zjtzjs.cn/ZJReport/GetReportData',{
+    let url = 'http://venues.zjtzjs.cn/ZJReport/GetReportData';
+    if(data.name){
+      url = 'http://venues.zjtzjs.cn/ZJReport/GetCitizenDataByName';
+    }
+		return fetch(url,{
       method:'GET',
       data:data
     });
