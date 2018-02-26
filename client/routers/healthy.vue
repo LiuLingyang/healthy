@@ -2,8 +2,14 @@
     <div class="g-mn">
         
         <div class="g-national" v-show="mode==='national'">
-            <div class="m-hd" v-if="!!phoneorcard">国民体质评定报告</div>
-            <div class="m-hd" v-if="!!name">公民体质评定报告</div>
+            <div class="m-hd" v-if="!!phoneorcard">
+                <div class="back" @click="loginout"><div class="arrow"></div><span class="wrd">登出</span></div>
+                国民体质评定报告
+            </div>
+            <div class="m-hd" v-if="!!name">
+                <div class="back" @click="loginout"><div class="arrow"></div><span class="wrd">登出</span></div>
+                公民体质评定报告
+            </div>
             <div class="m-national">
                 <p class="rank" v-if="rankPercent">您超过本省{{rankPercent}}%的人</p>
                 <div class="img" @click="changeMode('summary')">
@@ -192,6 +198,16 @@
             changeMode(mode){
                 if(!this.phoneorcard) return;
                 this.mode = mode;
+            },
+            loginout(){
+                if(this.phoneorcard){
+                    if(localStorage && !!localStorage.phoneorcard){
+                        localStorage.removeItem('phoneorcard');
+                    }
+                    this.$router.push({ name: 'login'});
+                }else{
+                    this.$router.push({ name: 'login2'});
+                }
             }
         },
         components:{BodyComposition,BoneDensity,CardiopulmonaryAbility,VascularFunction,TotalEvaluate,SummaryEvaluate}
