@@ -177,11 +177,17 @@
                             SitUp:'FYangWoQiZuo',
                             Grip:'FWoLi',
                             SelReactionTime:'FXuanZeFanYingShi',
-                            EyeCloseStandTime:'FBiYanDanJiaoZhanLi'
+                            EyeCloseStandTime:'FBiYanDanJiaoZhanLi',
+                            TotalScore:'FZongHePingFen_df',
+                            TotalAssess:'FZongHePingFen_pj'
                         }
                         for(var key in transformMap){
                             result[key] = result[transformMap[key]];
                         }
+                        result.TotalEvaluate = [{
+                            TotalAppraise:result['FColligateAppraise'],
+                            ImportFocus:result['FMainAttention']
+                        }]
                     }
                     this.result = result;
                     this.age = _.ages(result.Brithday);
@@ -196,7 +202,6 @@
                 });
             },
             changeMode(mode){
-                if(!this.phoneorcard) return;
                 this.mode = mode;
             },
             loginout(){
