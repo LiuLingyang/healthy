@@ -28,23 +28,23 @@
                     </div>
                     <div class="blk blk-2">
                         <p v-if="!!result.VitalCapacity">肺活量：{{result.VitalCapacity}}ml</p>
-                        <p v-if="!!result.StepIndex">台阶指数：{{result.StepIndex}}</p>
+                        <p v-if="!!result.StepIndex">台阶指数：{{result.StepIndex}}次</p>
                         <p v-if="!!result.LongJump">立定跳远：{{result.LongJump}}cm</p>
                         <p v-if="!!result.Tennis">网球掷远：{{result.Tennis}}m</p>
                         <p v-if="!!result.TripRun">10米折返跑：{{result.TripRun}}s</p>
                         <p v-if="!!result.Balance">走平衡木：{{result.Balance}}s</p>
                         <p v-if="!!result.ContinueJump">双脚连续跳：{{result.ContinueJump}}s</p>
                         <p v-if="!!result.StandJump">纵跳：{{result.StandJump}}cm</p>
-                        <p v-if="!!result.PushUp">俯卧撑：{{result.PushUp}}</p>
-                        <p v-if="!!result.SitUp">一分钟仰卧起坐：{{result.SitUp}}</p>
-                        <p v-if="!!result.F1500Run">1500米跑：{{result.F1500Run}}</p>
-                        <p v-if="!!result.F800Run">800米跑：{{result.F800Run}}</p>
-                        <p v-if="!!result.F2MinTiaoSheng">2分钟跳绳：{{result.F2MinTiaoSheng}}</p>
-                        <p v-if="!!result.FSanDianYiDong">三点移动：{{result.FSanDianYiDong}}</p>
-                        <p v-if="!!result.FXiangXianTiao">象限跳：{{result.FXiangXianTiao}}</p>
-                        <p v-if="!!result.F3000Walk">3000米健身走：{{result.F3000Walk}}</p>
-                        <p v-if="!!result.FLiangDianCeHua">两点侧滑：{{result.FLiangDianCeHua}}</p>
-                        <p v-if="!!result.FRaoGanPao">绕杆跑：{{result.FRaoGanPao}}</p>
+                        <p v-if="!!result.PushUp">俯卧撑：{{result.PushUp}}次</p>
+                        <p v-if="!!result.SitUp">一分钟仰卧起坐：{{result.SitUp}}次</p>
+                        <p v-if="!!result.F1500Run">1500米跑：{{result.F1500Run}}分</p>
+                        <p v-if="!!result.F800Run">800米跑：{{result.F800Run}}分</p>
+                        <p v-if="!!result.F2MinTiaoSheng">2分钟跳绳：{{result.F2MinTiaoSheng}}次</p>
+                        <p v-if="!!result.FSanDianYiDong">三点移动：{{result.FSanDianYiDong}}s</p>
+                        <p v-if="!!result.FXiangXianTiao">象限跳：{{result.FXiangXianTiao}}s</p>
+                        <p v-if="!!result.F3000Walk">3000米健身走：{{result.F3000Walk}}分</p>
+                        <p v-if="!!result.FLiangDianCeHua">两点侧滑：{{result.FLiangDianCeHua}}s</p>
+                        <p v-if="!!result.FRaoGanPao">绕杆跑：{{result.FRaoGanPao}}s</p>
                     </div>
                     <div class="blk blk-3">
                         <p v-if="!!result.Grip">握力：{{result.Grip}}kg</p>
