@@ -1,6 +1,6 @@
 <template>
     <div class="g-mn">
-        
+
         <div class="g-national" v-show="mode==='national'">
             <div class="m-hd" v-if="!!phoneorcard">
                 <div class="back" @click="loginout"><div class="arrow"></div><span class="wrd">登出</span></div>
@@ -45,6 +45,7 @@
                         <p v-if="!!result.F3000Walk">3000米健身走：{{result.F3000Walk}}分</p>
                         <p v-if="!!result.FLiangDianCeHua">两点侧滑：{{result.FLiangDianCeHua}}s</p>
                         <p v-if="!!result.FRaoGanPao">绕杆跑：{{result.FRaoGanPao}}s</p>
+                        <p v-if="!!result.FYaoWei">腰围：{{result.FYaoWei}}cm</p>
                     </div>
                     <div class="blk blk-3">
                         <p v-if="!!result.Grip">握力：{{result.Grip}}kg</p>
@@ -152,7 +153,7 @@
             this.fetchQuery();
         },
         mounted(){
-            
+
         },
         methods: {
             fetchQuery(){
