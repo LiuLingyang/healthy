@@ -28,10 +28,10 @@
             }
         },
         created(){
-            
+
         },
         mounted(){
-            
+
         },
         methods: {
             submit(){
@@ -42,13 +42,15 @@
                 }).then(result => {
                     if(result.IsOK == 'true'){
                         this.routerGo();
+                    }else{
+                        alert(result.Msg);
                     }
                 }).catch(err => {
                     alert('没有查询到您的报告');
                 });
             },
             routerGo(){
-                this.$router.push({ name: 'healthy', params: { name:this.name,birth:this.birth }}); 
+                this.$router.push({ name: 'healthy', params: { name:this.name,birth:this.birth }});
             }
         }
     }

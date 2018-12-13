@@ -31,7 +31,7 @@
             }
         },
         mounted(){
-            
+
         },
         methods: {
             submit(){
@@ -48,13 +48,14 @@
                         if(localStorage){
                             localStorage.removeItem('phoneorcard');
                         }
+                        alert(result.Msg);
                     }
                 }).catch(err => {
                     alert('没有查询到您的报告');
                 });
             },
             routerGo(phoneorcard){
-                this.$router.push({ name: 'healthy', params: { phoneorcard }}) 
+                this.$router.push({ name: 'healthy', params: { phoneorcard }})
             }
         }
     }
